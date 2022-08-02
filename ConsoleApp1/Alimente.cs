@@ -8,13 +8,26 @@ namespace ConsoleApp1.Alimente
 {
     internal class Alimente
     {
-        String alimente;
-        public Alimente()
+        public string Nume { get; set; }
+        public string Descriere { get; set; }
+        public DateTime DataExpirare { get; set; }
+        public decimal Pret { get; set; }
+
+        public Alimente(string nume, string descriere, DateTime dataDeExpirare, decimal pret)
         {
+            this.Nume = nume;
+            this.Descriere = descriere;
+            this.DataExpirare = dataDeExpirare;
+            this.Pret = pret;
+
+            AplicaReducereInainteDeExpirare();
         }
-        public String setalimente(string alimente)
+        public void AplicaReducereInainteDeExpirare()
         {
-            return this.alimente;
+            if((DateTime.Today - DataExpirare.Date).TotalDays == 1)
+            {
+                Pret =Pret / 2;
+            }
         }
     }
 }
