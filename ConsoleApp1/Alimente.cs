@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Alimente
 {
-    internal class Alimente
+    public class Alimente
     {
+
         public string Nume { get; set; }
         public string Descriere { get; set; }
         public DateTime DataExpirare { get; set; }
@@ -24,9 +25,10 @@ namespace ConsoleApp1.Alimente
         }
         public void AplicaReducereInainteDeExpirare()
         {
-            if((DateTime.Today - DataExpirare.Date).TotalDays == 1)
+            Console.WriteLine((DataExpirare.Date - DateTime.Now).TotalDays);
+            if ((DataExpirare.Date - DateTime.Now).TotalDays <= 1)
             {
-                Pret =Pret / 2;
+                Pret = Pret / 2;
             }
         }
     }
