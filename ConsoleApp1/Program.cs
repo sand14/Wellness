@@ -6,6 +6,7 @@ using ConsoleApp1.InfoApa;
 using ConsoleApp1;
 using Enums;
 using Lists.Classes;
+using System.Text.RegularExpressions;
 
 
 
@@ -121,7 +122,7 @@ foreach (ref int index in sir)
 
 Console.WriteLine(suma);*/
 
-Span<int> sir=new int[25];
+/*Span<int> sir=new int[25];
 int index2 = 0;
 int i = 0;
 int suma = 0;
@@ -140,5 +141,30 @@ foreach (ref int index in sir)
 }
 
 
-Console.WriteLine(suma);
+Console.WriteLine(suma);*/
+//279146358279
+string CNP = "5000314090045";
+char[] chars = CNP.ToCharArray();
+int[] Aint = Array.ConvertAll(chars, c => (int)Char.GetNumericValue(c));
+int[] expresie= { 2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9};
+int sum = 0;
+for(int i=0; i<expresie.Length; i++)
+{
+    sum += Aint[i] * expresie[i];
+}
+if(sum % 11 <10 && sum % 11 == Aint[12])
+{
+    Console.WriteLine("corect");
+}
+
+/*if (!(CNP.Length == 13)){
+    Console.WriteLine("CNP invalid");
+}
+int sum = 0;
+int verificare = Convert.ToInt32(CNP[12]);
+sum= Convert.ToInt32(CNP[0]) * 2 + Convert.ToInt32(CNP[1]) * 7 + Convert.ToInt32(CNP[2]) * 9 + Convert.ToInt32(CNP[3]) * 1 + Convert.ToInt32(CNP[4]) * 4 + Convert.ToInt32(CNP[5]) * 6 + Convert.ToInt32(CNP[6]) * 3 + Convert.ToInt32(CNP[7]) * 5 + Convert.ToInt32(CNP[8]) * 8 + Convert.ToInt32(CNP[9]) * 2 + Convert.ToInt32(CNP[10]) * 7 + Convert.ToInt32(CNP[11]) * 9;
+if(sum > 0)
+{
+    Console.WriteLine("Correct");
+}*/
 
