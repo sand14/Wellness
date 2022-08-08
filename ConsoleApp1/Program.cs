@@ -143,8 +143,7 @@ foreach (ref int index in sir)
 
 Console.WriteLine(suma);*/
 //279146358279
-Console.WriteLine("Introduce-ti CNP-ul");
-string CNP = Console.ReadLine();
+String CNP = args[0];
 char[] chars = CNP.ToCharArray();
 int[] Aint = Array.ConvertAll(chars, c => (int)Char.GetNumericValue(c));
 int[] expresie= { 2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9};
@@ -186,6 +185,7 @@ else if (sum % 11 == 10 && Aint[12] == 1)
 else
 {
     Console.WriteLine("CNP incorect");
+    Console.WriteLine("Cifra validare incorecta");
 }
 
 /*if (!(CNP.Length == 13)){
